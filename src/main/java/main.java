@@ -28,6 +28,7 @@ public class main {
         {
             System.out.println("error" + e.toString());
         }
+        writer.writeToFile(response.getBody().getObject().get("explanation").toString());
     }
 
     public static void downloadFile(String inURL, String infileName) throws Throwable
@@ -38,5 +39,16 @@ public class main {
         System.out.println("file copy: " + bytes + " bytes read from:");
         System.out.println(inURL);
         System.out.println("Saved to: " + localPath + infileName);
+    }
+
+    public static void refreshWindowsBackground() throws Throwable{
+//    [DllImport("user32.dll", SetLastError = true)]
+//            private static extern IntPtr SendMessageTimeout(IntPtr hWnd, int Msg, IntPtr wParam, string lParam, uint fuFlags, uint uTimeout, IntPtr lpdwResult);
+//
+//            private static readonly IntPtr HWND_BROADCAST = new IntPtr(0xffff);
+//            private const int WM_SETTINGCHANGE = 0x1a;
+//            private const int SMTO_ABORTIFHUNG = 0x0002;
+//
+//            SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, IntPtr.Zero, null, SMTO_ABORTIFHUNG, 100, IntPtr.Zero);
     }
 }
